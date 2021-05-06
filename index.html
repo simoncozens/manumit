@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- CSS only -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+			crossorigin="anonymous"
+		/>
+		<script
+			src="https://kit.fontawesome.com/627c07a4e5.js"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.15/paper-full.min.js"
+			integrity="sha512-ovjLI1ZcZe6bw+ImQ21r+sv8q/Vwob2kq7tFidK6E1LWfi0T4uobbmpfEU1//a9h9o5Kkt+MnMWf6rWlg0EiMw=="
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://code.jquery.com/jquery-3.6.0.min.js"
+			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			crossorigin="anonymous"
+		></script>
+		<script type="module" src="js/varmodel.js"></script>
+
+		<script type="module" src="js/manumit.js" canvas="canvas"></script>
+		<script src="js/handtool.js"></script>
+		<script src="js/pentool.js"></script>
+		<style>
+			html,
+			body {
+				margin: 0;
+				overflow: hidden;
+				height: 100%;
+			}
+
+			/* Scale canvas with resize attribute to full size */
+			canvas[resize] {
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<nav class="navbar navbar-light bg-light">
+				<div class="navbar-header" id="toolbar">
+					<button class="btn btn-outline-primary" id="pen">
+						<i class="fas fa-pen-nib"></i>
+					</button>
+					<button class="btn" id="pencil" disabled>
+						<i class="fas fa-pen"></i>
+					</button>
+					<button class="btn" id="hand">
+						<i class="fas fa-hand-paper"></i>
+					</button>
+				</div>
+				<span id="metrics">
+					Cap height:
+					<input
+						type="number"
+						id="capheight"
+						value="760"
+						min="10"
+						max="1200"
+						step="10"
+						required
+					/>
+					x height:
+					<input
+						type="number"
+						id="xheight"
+						value="536"
+						min="10"
+						max="1200"
+						step="10"
+						required
+					/>
+				</span>
+			</nav>
+			<div id="axissliders" class="row mb-3"></div>
+			<canvas id="canvas" resize></canvas>
+			<div id="location"></div>
+			<div id="mastersList" class=""></div>
+		</div>
+	</body>
+</html>
