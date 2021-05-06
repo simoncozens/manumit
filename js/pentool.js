@@ -94,7 +94,7 @@ function setup_pentool() {
                 ) {
                     do_add(segment.handleIn, segment.index * 3, event.delta);
                     do_set(
-                        segment.handleIn,
+                        segment.handleOut,
                         segment.index * 3 + 2,
                         segment.handleIn
                             .rotate(180, new Point(0, 0))
